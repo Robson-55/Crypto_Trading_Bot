@@ -1,8 +1,10 @@
 #transformer GPT2
+#!pip install transformers
 
-!pip intstall transformers
+import transformers
+import tensorflow
 from transformers import pipeline,set_seed
-sentiment_analyzer=pipeline('sentiment_analysis',model='gpt2')
+sentiment_analyzer=pipeline('sentiment-analysis',model='gpt2')
 sentiment_score=sentiment_analyzer(reddit_post)
 
 #LSTM
