@@ -1,0 +1,12 @@
+batch_size: 50
+comments_cap: null
+debug: false
+laps: 800
+output_dir: ./data/
+reddit_id: dAnEtG5l9r4Y5uhbhHxKNg
+reddit_username: gonzaloetjo
+subreddit: Ethereum
+utc_after: '1589459201'
+utc_before: null
+utc_lower_bound: null
+utc_upper_bound: '1589459201'

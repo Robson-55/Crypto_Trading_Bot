@@ -29,8 +29,8 @@ class OutputManager:
     def __init__(self, output_dir: str, subreddit: str):
         self.submissions_list = []
         self.submissions_raw_list = []
-        self.comments_list = []
-        self.comments_raw_list = []
+        # self.comments_list = []
+        # self.comments_raw_list = []
         self.run_id = datetime.today().strftime('%Y%m%d%H%M%S')
 
         self.subreddit_dir = join(output_dir, subreddit)
@@ -38,41 +38,42 @@ class OutputManager:
 
         self.submissions_output = join(self.runtime_dir, "submissions")
         self.sub_raw_output = join(self.runtime_dir, "submissions", "raw")
-        self.comments_output = join(self.runtime_dir, "comments")
-        self.comments_raw_output = join(self.runtime_dir, "comments", "raw")
+        # self.comments_output = join(self.runtime_dir, "comments")
+        # self.comments_raw_output = join(self.runtime_dir, "comments", "raw")
         self.params_path = join(self.runtime_dir, OutputManager.params_filename)
 
         self.total_submissions_counter = 0
-        self.total_comments_counter = 0
+        #self.total_comments_counter = 0
 
         for path in [self.submissions_output,
-                     self.sub_raw_output,
-                     self.comments_output,
-                     self.comments_raw_output]:
+                     self.sub_raw_output
+                     #self.comments_output,
+                     #self.comments_raw_output
+                     ]:
             Path(path).mkdir(parents=True, exist_ok=True)
 
     def reset_lists(self):
         self.submissions_list = []
         self.submissions_raw_list = []
-        self.comments_list = []
-        self.comments_raw_list = []
+        # self.comments_list = []
+        # self.comments_raw_list = []
 
     def store(self, lap: str):
         # Track total data statistics
         self.total_submissions_counter += len(self.submissions_list)
-        self.total_comments_counter += len(self.comments_list)
+        #self.total_comments_counter += len(self.comments_list)
 
         # Store the collected data
         dictlist_to_csv(join(self.submissions_output, f"{lap}.csv"), self.submissions_list)
-        dictlist_to_csv(join(self.comments_output, f"{lap}.csv"), self.comments_list)
+        #dictlist_to_csv(join(self.comments_output, f"{lap}.csv"), self.comments_list)
 
         if len(self.submissions_raw_list) > 0:
             with open(join(self.sub_raw_output, f"{lap}.njson"), "a", encoding="utf-8") as f:
                 f.write("\n".join(json.dumps(row) for row in self.submissions_raw_list))
-        if len(self.comments_raw_list) > 0:
-            with open(join(self.comments_raw_output, f"{lap}.njson"), "a", encoding="utf-8") as f:
-                f.write("\n".join(json.dumps(row, default=lambda o: '<not serializable>')
-                                  for row in self.comments_raw_list))
+        # if len(self.comments_raw_list) > 0:
+        #     with open(join(self.comments_raw_output, f"{lap}.njson"), "a", encoding="utf-8") as f:
+        #         f.write("\n".join(json.dumps(row, default=lambda o: '<not serializable>')
+        #                           for row in self.comments_raw_list))
 
     def store_params(self, params: dict):
         with open(self.params_path, "w", encoding="utf-8") as f:
@@ -159,31 +160,31 @@ def utc_range_calculator(utc_received: int,
     return utc_lower_bound, utc_upper_bound
 
 
-def comments_fetcher(sub, output_manager, reddit_api, comments_cap):
-    """
-    Comments fetcher
-    Get all comments with depth-first approach
-    Solution from https://praw.readthedocs.io/en/latest/tutorials/comments.html
-    """
-    try:
-        submission_rich_data = reddit_api.submission(id=sub.id)
-        logger.debug(f"Requesting {submission_rich_data.num_comments} comments...")
-        submission_rich_data.comments.replace_more(limit=comments_cap)
-        comments = submission_rich_data.comments.list()
-    except NotFound:
-        logger.warning(f"Submission not found in PRAW: `{sub.id}` - `{sub.title}` - `{sub.full_link}`")
-        return
-    for comment in comments:
-        comment_useful_data = {
-            "id": comment.id,
-            "submission_id": sub.id,
-            "body": comment.body.replace('\n', '\\n'),
-            "created_utc": int(comment.created_utc),
-            "parent_id": comment.parent_id,
-            "permalink": comment.permalink,
-        }
-        output_manager.comments_raw_list.append(comment.__dict__)
-        output_manager.comments_list.append(comment_useful_data)
+# def comments_fetcher(sub, output_manager, reddit_api, comments_cap):
+#     """
+#     Comments fetcher
+#     Get all comments with depth-first approach
+#     Solution from https://praw.readthedocs.io/en/latest/tutorials/comments.html
+#     """
+#     try:
+#         submission_rich_data = reddit_api.submission(id=sub.id)
+#         logger.debug(f"Requesting {submission_rich_data.num_comments} comments...")
+#         submission_rich_data.comments.replace_more(limit=comments_cap)
+#         comments = submission_rich_data.comments.list()
+#     except NotFound:
+#         logger.warning(f"Submission not found in PRAW: `{sub.id}` - `{sub.title}` - `{sub.full_link}`")
+#         return
+#     for comment in comments:
+#         comment_useful_data = {
+#             "id": comment.id,
+#             "submission_id": sub.id,
+#             "body": comment.body.replace('\n', '\\n'),
+#             "created_utc": int(comment.created_utc),
+#             "parent_id": comment.parent_id,
+#             "permalink": comment.permalink,
+#         }
+#         output_manager.comments_raw_list.append(comment.__dict__)
+#         output_manager.comments_list.append(comment_useful_data)
 
 
 def submission_fetcher(sub, output_manager: OutputManager):
@@ -199,6 +200,8 @@ def submission_fetcher(sub, output_manager: OutputManager):
         "title": sub.title.replace('\n', '\\n'),
         "selftext": self_text_normalized,
         "full_link": sub.full_link,
+        "score": sub.score,
+        "comments": sub.num_comments
     }
     output_manager.submissions_list.append(submission_useful_data)
     output_manager.submissions_raw_list.append(sub.d_)
@@ -258,12 +261,13 @@ def main(subreddit: str = Argument(..., help=HelpMessages.subreddit),
                 f"direction: `{direction}`, "
                 f"batch size: {batch_size}, "
                 f"total submissions to fetch: {batch_size * laps}")
+                #add score min and comment min
 
     # Start the gathering
     for lap in range(laps):
         logger.debug(f"New lap start: {lap}")
-        lap_message = f"Lap {lap}/{laps} completed in ""{minutes:.1f}m | " \
-                      f"[new/tot]: {len(out_manager.comments_list)}/{out_manager.total_comments_counter}"
+        lap_message = f"Lap {lap}/{laps} completed in ""{minutes:.1f}m | "  
+                      #f"[new/tot]: {len(out_manager.comments_list)}/{out_manager.total_comments_counter}"
 
         with Timer(text=lap_message, logger=logger.info):
             # Reset the data already stored
@@ -285,7 +289,7 @@ def main(subreddit: str = Argument(..., help=HelpMessages.subreddit),
                 submission_fetcher(sub, out_manager)
 
                 # Fetch the submission's comments
-                comments_fetcher(sub, out_manager, reddit_api, comments_cap)
+                #comments_fetcher(sub, out_manager, reddit_api, comments_cap)
 
                 # Calculate the UTC seen range
                 utc_lower_bound, utc_upper_bound = utc_range_calculator(sub.created_utc,
@@ -300,7 +304,7 @@ def main(subreddit: str = Argument(..., help=HelpMessages.subreddit),
         logger.debug(f"utc_upper_bound: {utc_upper_bound} , utc_lower_bound: {utc_lower_bound}")
 
     out_manager.enrich_and_store_params(utc_newer=utc_upper_bound, utc_older=utc_lower_bound)
-    logger.info(f"Stop download: lap {laps}/{laps} [total]: {out_manager.total_comments_counter}")
+    logger.info(f"Stop download: lap {laps}/{laps} [total]: finished")
 
 
 if __name__ == '__main__':

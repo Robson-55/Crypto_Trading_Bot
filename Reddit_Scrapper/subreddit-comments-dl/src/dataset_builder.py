@@ -21,22 +21,22 @@ class DatasetManager:
     subreddit_header_name = "subreddit"
 
     def __init__(self, output_path: str, caching_size: int):
-        self.comments_rows = []
+        #self.comments_rows = []
         self.submissions_rows = []
-        self.total_comments = 0
+        #self.total_comments = 0
         self.total_submissions = 0
-        self.comments_census_ids = set()
+        #self.comments_census_ids = set()
         self.submissions_census_ids = set()
         self.subreddit_name = "undefined"
         self.output_path = output_path
         self.caching_size = caching_size
 
-        self.comments_csv_header: Optional[List[str]] = None
+        #self.comments_csv_header: Optional[List[str]] = None
         self.submissions_csv_header: Optional[List[str]] = None
 
         self.run_id = datetime.today().strftime('%Y%m%d%H%M%S')
         self.runtime_dir = join(self.output_path, self.run_id)
-        self.comments_output_path = join(self.runtime_dir, "comments.csv")
+        #self.comments_output_path = join(self.runtime_dir, "comments.csv")
         self.submissions_output_path = join(self.runtime_dir, "submissions.csv")
         Path(self.runtime_dir).mkdir(parents=True, exist_ok=True)
 
@@ -161,17 +161,17 @@ def main(input_dir: str = Option("./data/", help=HelpMessages.input_dir),
 
         for job_id in tqdm(listdir(subreddit_path)):  # <input_dir>/<sub>/<job>
             job_folder_path = join(subreddit_path, job_id)
-            comments_folder_path = join(job_folder_path, "comments")
+            #comments_folder_path = join(job_folder_path, "comments")
             submissions_folder_path = join(job_folder_path, "submissions")
 
-            for csv_filename in listdir(comments_folder_path):  # <input_dir>/<sub>/<job>/comments/<file>.csv
-                csv_path = join(comments_folder_path, csv_filename)
-                if not isfile(csv_path):
-                    continue
-                header, rows = csv_reader(csv_path)
-                dataset_mng.set_comments_csv_header(header)
-                dataset_mng.populate_comments(rows)
-            logger.debug(f"Comments for job `{job_id}` loaded")
+            # for csv_filename in listdir(comments_folder_path):  # <input_dir>/<sub>/<job>/comments/<file>.csv
+            #     csv_path = join(comments_folder_path, csv_filename)
+            #     if not isfile(csv_path):
+            #         continue
+            #     header, rows = csv_reader(csv_path)
+            #     dataset_mng.set_comments_csv_header(header)
+            #     dataset_mng.populate_comments(rows)
+            # logger.debug(f"Comments for job `{job_id}` loaded")
 
             for csv_filename in listdir(submissions_folder_path):  # <input_dir>/<sub>/<job>/submissions/<file>.csv
                 csv_path = join(submissions_folder_path, csv_filename)
@@ -183,7 +183,7 @@ def main(input_dir: str = Option("./data/", help=HelpMessages.input_dir),
             logger.debug(f"Submissions for job `{job_id}` loaded")
 
         logger.debug(f"Storing data for `{subreddit_name}`")
-        dataset_mng.store_comments()
+        #dataset_mng.store_comments()
         dataset_mng.store_submissions()
 
 
