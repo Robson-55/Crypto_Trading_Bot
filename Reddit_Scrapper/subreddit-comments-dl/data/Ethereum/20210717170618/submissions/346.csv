@@ -1,0 +1,51 @@
+id,created_utc,title,selftext,full_link,score,comments
+7xoqnu,1518677709,Need help finding my Tokens!,[removed],https://www.reddit.com/r/ethereum/comments/7xoqnu/need_help_finding_my_tokens/,1,0
+7xorlu,1518678094,Oil and Gas,,https://www.reddit.com/r/ethereum/comments/7xorlu/oil_and_gas/,1,0
+7xorwi,1518678208,"Can someone explain to me how these ethereum ""games"" are games?",[removed],https://www.reddit.com/r/ethereum/comments/7xorwi/can_someone_explain_to_me_how_these_ethereum/,1,0
+7xp424,1518683404,"What's your favorite ERC20 multicoin wallet, and what's the best way to store multiple ERC20 coins?",[removed],https://www.reddit.com/r/ethereum/comments/7xp424/whats_your_favorite_erc20_multicoin_wallet_and/,1,0
+7xp563,1518683909,I regularly used my private key to access my wallet in MEW. Should I create a new wallet and move my funds out?,[removed],https://www.reddit.com/r/ethereum/comments/7xp563/i_regularly_used_my_private_key_to_access_my/,1,0
+7xp5un,1518684211,When will ETH overtake BTC?,[removed],https://www.reddit.com/r/ethereum/comments/7xp5un/when_will_eth_overtake_btc/,1,0
+7xp87r,1518685982,/u/vbuterin bio in the main French newspaper (paid-subscribers -in french),,https://www.reddit.com/r/ethereum/comments/7xp87r/uvbuterin_bio_in_the_main_french_newspaper/,1,1
+7xpc97,1518687824,PoS,,https://www.reddit.com/r/ethereum/comments/7xpc97/pos/,1,0
+7xph7p,1518689929,Bots,,https://www.reddit.com/r/ethereum/comments/7xph7p/bots/,1,0
+7xpk8l,1518691187,Ether Voxel Space - 3d world stored entirely on the ethereum blockchain,"Hi! Today I'm publishing my first smart contract and Dapp. It's a 3d world made of voxels stored on the ethereum blockchain:\n\n[EtherVoxel.Space](https://ethervoxel.space)\n\nThe world is an 3-dimensional (256x256x256) array storing coordinates, material type and ownership information about the voxels.\n\nThere are 4 types of interactions allowed for users: Place, Repaint, Destroy and Transfer. After placing new voxel in the world, it’s owner can repaint it with another color, destroy it or transfer ownership to another ethereum address. Fee for every action is set to 0.0001 ETH to support further development and limit spam.\n\nAlthough the contract is immutable, the rest of the dapp isn't. For example, there are 16 materials (plain colors) for voxels right now. But the contract permits a maximum of 256 voxel materials so we can decide on how the remaining 240 should look like. (maybe even deploy a contract to vote on them?)\n\nAll of the code is open source.\n\nAs this is my first take on dapps, I suppose there could be bugs, flaws or things that I couldn't foresee. Let me know how do you like my idea / experiment, feedback is highly appreciated :)",https://www.reddit.com/r/ethereum/comments/7xpk8l/ether_voxel_space_3d_world_stored_entirely_on_the/,19,5
+7xpkqb,1518691380,iExec Dev Letter #14: Intel SGX Security and R— 14 Feb 2018,,https://www.reddit.com/r/ethereum/comments/7xpkqb/iexec_dev_letter_14_intel_sgx_security_and_r_14/,43,13
+7xpm4c,1518691976,Bitcoins in Satellites!,,https://www.reddit.com/r/ethereum/comments/7xpm4c/bitcoins_in_satellites/,1,1
+7xpn2h,1518692349,Sent ETH to ETC address in MEW,[removed],https://www.reddit.com/r/ethereum/comments/7xpn2h/sent_eth_to_etc_address_in_mew/,1,0
+7xpnaw,1518692452,iExec Dev Letter #14: Intel SGX Security and R— 14 Feb 2018,[deleted],https://www.reddit.com/r/ethereum/comments/7xpnaw/iexec_dev_letter_14_intel_sgx_security_and_r_14/,2,0
+7xpnk6,1518692541,Public Are Deciding Crypto’s Future In Malaysia,,https://www.reddit.com/r/ethereum/comments/7xpnk6/public_are_deciding_cryptos_future_in_malaysia/,1,0
+7xpogc,1518692872,Ethereum Will Be the Crypto King of 2018 Expert Says High Ethereum Price - Coin Stop Loss,,https://www.reddit.com/r/ethereum/comments/7xpogc/ethereum_will_be_the_crypto_king_of_2018_expert/,0,3
+7xpr4g,1518693933,MEW Twitter,,https://www.reddit.com/r/ethereum/comments/7xpr4g/mew_twitter/,1,0
+7xpreo,1518694056,Original Owner Get MyEtherWallet Twitter Account Back,,https://www.reddit.com/r/ethereum/comments/7xpreo/original_owner_get_myetherwallet_twitter_account/,0,0
+7xptyg,1518695113,"Bitcoin, Litecoin or Ethereum: Which one to choose?",,https://www.reddit.com/r/ethereum/comments/7xptyg/bitcoin_litecoin_or_ethereum_which_one_to_choose/,0,1
+7xpu4q,1518695174,FromDev on Decentralized Freelancing,[deleted],https://www.reddit.com/r/ethereum/comments/7xpu4q/fromdev_on_decentralized_freelancing/,1,0
+7xpu9f,1518695217,ShipChain joins the Enterprise Ethereum Alliance,,https://www.reddit.com/r/ethereum/comments/7xpu9f/shipchain_joins_the_enterprise_ethereum_alliance/,1,0
+7xpuo3,1518695362,Ethereum Developer Resigns as Code Editor Citing Legal Concerns,,https://www.reddit.com/r/ethereum/comments/7xpuo3/ethereum_developer_resigns_as_code_editor_citing/,2,1
+7xpuvz,1518695448,FromDev on Blockchain Freelancing,,https://www.reddit.com/r/ethereum/comments/7xpuvz/fromdev_on_blockchain_freelancing/,198,17
+7xpv8x,1518695599,ETHEERA SWITZERLAND REAL ESTATE FOR THE BLOCKCHAIN,[removed],https://www.reddit.com/r/ethereum/comments/7xpv8x/etheera_switzerland_real_estate_for_the_blockchain/,1,0
+7xpy46,1518696624,Need some help explaining ETH to my father. Do we have a resource like the link in below?,[removed],https://www.reddit.com/r/ethereum/comments/7xpy46/need_some_help_explaining_eth_to_my_father_do_we/,1,1
+7xpztv,1518697214,*MEME* When You Buy The Top! | When You FOMO In!,,https://www.reddit.com/r/ethereum/comments/7xpztv/meme_when_you_buy_the_top_when_you_fomo_in/,1,0
+7xq1b5,1518697750,Eth invite started,[removed],https://www.reddit.com/r/ethereum/comments/7xq1b5/eth_invite_started/,1,0
+7xq2yz,1518698318,Yoichi Hirai's (pirapira's) statement on resignation from the post of EIP editor,,https://www.reddit.com/r/ethereum/comments/7xq2yz/yoichi_hirais_pirapiras_statement_on_resignation/,17,1
+7xq3l4,1518698518,The South African Reserve Bank Launches Ethereum-based Blockchain PoC for Interbank Settlements,,https://www.reddit.com/r/ethereum/comments/7xq3l4/the_south_african_reserve_bank_launches/,1,0
+7xq5kk,1518699204,South Africa’s Central Bank Launches Ethereum-Based Blockchain,[deleted],https://www.reddit.com/r/ethereum/comments/7xq5kk/south_africas_central_bank_launches_ethereumbased/,1,0
+7xq5ss,1518699273,South Africa’s Central Bank Launches Ethereum-Based Blockchain,,https://www.reddit.com/r/ethereum/comments/7xq5ss/south_africas_central_bank_launches_ethereumbased/,1,0
+7xq6bi,1518699447,"""I resign from the post of an EIP editor. I've removed my write permission."" - Yoichi",,https://www.reddit.com/r/ethereum/comments/7xq6bi/i_resign_from_the_post_of_an_eip_editor_ive/,1,0
+7xq718,1518699703,Fake Drugs: Real Problem,,https://www.reddit.com/r/ethereum/comments/7xq718/fake_drugs_real_problem/,1,1
+7xqa0g,1518700624,Idea how we can improve whole Ethereum network - open discussion,[deleted],https://www.reddit.com/r/ethereum/comments/7xqa0g/idea_how_we_can_improve_whole_ethereum_network/,0,3
+7xqf39,1518702203,"Breaking down the My Ether Wallet lawsuit, and Twitter Change from MyEtherWallet to MyCrypto (Update!!! MEW got back MEW Twitter, hurrah!!!!)",[deleted],https://www.reddit.com/r/ethereum/comments/7xqf39/breaking_down_the_my_ether_wallet_lawsuit_and/,0,0
+7xqghq,1518702617,Crypto 101 podcast with Taylor M,"Very interesting timing of this podcast given the ordeal that took place last week... You would think Kosala didn’t exist after listening to this. \n\n\n[My Ether Wallet &amp; My Crypto 101 w/ Founder Taylor Monaghan ft Dani Amsalem](https://itunes.apple.com/us/podcast/crypto-101/id1262351840?mt=2&amp;i=1000402165704)",https://www.reddit.com/r/ethereum/comments/7xqghq/crypto_101_podcast_with_taylor_m/,25,20
+7xqgyv,1518702752,Wallet for Ethereum tokens,<not selftext available>,https://www.reddit.com/r/ethereum/comments/7xqgyv/wallet_for_ethereum_tokens/,1,0
+7xqhne,1518702968,Smart Contracts,"Hi guys. If I wanted to make a smart contract, and I have around 0 experience in programing. Where would I start? For starters I would like something like a simple contract, count to 100, pick a random number and then loop. Thanks !",https://www.reddit.com/r/ethereum/comments/7xqhne/smart_contracts/,7,13
+7xqirz,1518703281,Chanimal Universe lets you own a living crypto pet on the blockchain,,https://www.reddit.com/r/ethereum/comments/7xqirz/chanimal_universe_lets_you_own_a_living_crypto/,1,0
+7xqkf7,1518703750,Why is Iceland perfect for crypto mining,,https://www.reddit.com/r/ethereum/comments/7xqkf7/why_is_iceland_perfect_for_crypto_mining/,1,0
+7xqlyz,1518704171,Leeroy featured on Product Hunt today,,https://www.reddit.com/r/ethereum/comments/7xqlyz/leeroy_featured_on_product_hunt_today/,8,0
+7xqomq,1518704902,UnikoinGold (UKG - ERC20 Token) - Unikrn on the frontline of regulated cryptocurrency gambling through Maltese (MGA) Sandbox License.,[deleted],https://www.reddit.com/r/ethereum/comments/7xqomq/unikoingold_ukg_erc20_token_unikrn_on_the/,1,0
+7xqqz4,1518705533,Rocket DAO last few hours of resale,[deleted],https://www.reddit.com/r/ethereum/comments/7xqqz4/rocket_dao_last_few_hours_of_resale/,1,0
+7xqr1e,1518705549,"State of the CFTC: Examining Pending Rules, Cryptocurrency Regulation, and Cross-Border Agreements ~ LIVE HEARING",,https://www.reddit.com/r/ethereum/comments/7xqr1e/state_of_the_cftc_examining_pending_rules/,1,0
+7xqrbg,1518705621,Rocket DAO final hours of presale,,https://www.reddit.com/r/ethereum/comments/7xqrbg/rocket_dao_final_hours_of_presale/,6,1
+7xqrhn,1518705669,I'm making a list of things that make ethereum sexy. What would you add to it?,[deleted],https://www.reddit.com/r/ethereum/comments/7xqrhn/im_making_a_list_of_things_that_make_ethereum/,1,1
+7xqszj,1518706054,Raiden Development Update Feb/18,,https://www.reddit.com/r/ethereum/comments/7xqszj/raiden_development_update_feb18/,8,0
+7xqtmz,1518706231,How to use Parity in NixOS,[deleted],https://www.reddit.com/r/ethereum/comments/7xqtmz/how_to_use_parity_in_nixos/,1,0
+7xqvp9,1518706797,Bloomzed attractiveness for investing,[removed],https://www.reddit.com/r/ethereum/comments/7xqvp9/bloomzed_attractiveness_for_investing/,1,1
+7xqwsf,1518707053,eSports Betting Cryptocurrency eGold from UltraPlay Sold out Within 24 Hours,,https://www.reddit.com/r/ethereum/comments/7xqwsf/esports_betting_cryptocurrency_egold_from/,1,0
