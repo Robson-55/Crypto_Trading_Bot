@@ -1,6 +1,8 @@
 **CRYPTOCURRENCIES TRADING BOT**
 
 This projects aims at developing an algorithm composed of several pieces of code, in which some cryptocurrencies prices are predicted. Based on these predictions, an investment fund of cryptocurrencies will be established on Enzyme, with its corresponding wallet address so that it can be easily accesible for people who would like to invest.
+In this project, a Reddit scrapper will be used in order to get comments and submissions from Reddit in the past years. Those news will be passed through a pretrained transformer (GPT-2) in order to analyze its sentiment score. Once this step is done, another scrapper will be used in order to get the historic of pricesand volumes from a selected set of crypto assets on a daily basis. This information will be merged with the sentiment scores for each day. After all this information is gathered, it will be passed through a deep learning LSTM model in order to be trained with it and output the price predictions for each cryptocurrency.  
+For future news, Cryptopanic (news aggregator from several sources beyond Reddit) will be used. The transformer will be feeded with all this news and give as output its sentiment score, averaging by day. After this is done, this information will be merged with new daily prices, volumes... in order to keep on predicting future prices.
 
 In this project, a Reddit scrapper will be used in order to get comments and submissions from Reddit in the past years. Those news will be passed through a pretrained transformer (GPT-2) in order to analyze its sentiment score. Once this id done, another scrapper will be used in order to get the historic of prices, volume... from a selected set of crypto assets on a daily basis. This information will be merged with the sentiment score for each day. After all this information is gathered, it will be passed through a deep learning regression model in order to be trained with it. For future news, Cryptopanic (news aggregator from several sources beyond Reddit) will be used. The transformer will be feeded with all this news and give as output its sentiment score, averaging by day. After this is done, this information will be merged with new daily prices, volumes... in order to keep on predicting future prices.
 
@@ -165,35 +167,5 @@ Contributions are what make the open source community such an amazing place to b
 3. Commit your Changes (`git commit -m 'Add some features'`)
 4. Push to the Branch (`git push origin feature/tennis-predictor`)
 5. Open a Pull Request
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-Data:
-Tennis databases, files, and algorithms by Jeff Sackmann / Tennis Abstract is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
-Based on a work at https://github.com/JeffSackmann.
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Gonzalo Etse - gonzaloetjo@gmail.com.com
-Roberto Belarmino Garcia Garcia - allagonne@gmail.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-* [Paper by Sascha Wilkens: Sports Prediction and Betting Models in the Machine Learning Age: The Case of Tennis](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3506302)
-* [JackSackman ATP Data](https://github.com/JeffSackmann/tennis_atp)
-* [ATP Official Data](https://www.atptour.com/en/stats)
-
 
 
