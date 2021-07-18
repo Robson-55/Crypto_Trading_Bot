@@ -1,29 +1,19 @@
 **CRYPTOCURRENCIES TRADING BOT**
 
-This projects aims at developing an algorithm composed of several pieces of code, in which some cryptocurrencies prices are predicted. Based on these predictions, a decentralized investment fund of cryptocurrencies will be established on Enzyme, with its corresponding wallet address so that it can be easily accesible for people who would like to invest.  
+This projects aims at developing an algorithm with multiple components, with the intent to predict cryptocurrencies. 
+Based on these predictions, a decentralized investment fund of cryptocurrencies will be established on Enzyme, with its corresponding wallet address so that it can be easily accesible for people who would like to invest.  
 
-In this project, a Reddit scrapper will be used in order to get comments and submissions from Reddit in the past years. Those news will be passed through a pretrained transformer (distilbert-base-cased model) in order to analyze its sentiment score. Once this step is done, another scrapper will be used in order to get the historic of pricesand volumes from a selected set of crypto assets on a daily basis. This information will be merged with the sentiment scores for each day. After all this information is gathered, it will be passed through a deep learning LSTM model in order to be trained with it and output the price predictions for each cryptocurrency.  
-For future news, Cryptopanic (news aggregator from several sources beyond Reddit) will be used. The transformer will be feeded with all this news and give as output its sentiment score, averaging by day. After this is done, this information will be merged with new daily prices, volumes... in order to keep on predicting future prices.
+For this objective we   
 
-In this project, a Reddit scrapper will be used in order to get comments and submissions from Reddit in the past years. Those news will be passed through a pretrained transformer (distilbert-base-cased model) in order to analyze its sentiment score. Once this id done, another scrapper will be used in order to get the historic of prices, volume... from a selected set of crypto assets on a daily basis. This information will be merged with the sentiment score for each day. After all this information is gathered, it will be passed through a deep learning regression model in order to be trained with it. For future news, Cryptopanic (news aggregator from several sources beyond Reddit) will be used. The transformer will be feeded with all this news and give as output its sentiment score, averaging by day. After this is done, this information will be merged with new daily prices, volumes... in order to keep on predicting future prices.   
+* Scrap & clean Hour Price data through coingeko or gemini
+* Scrap & clean, using PRAW, subreddits related to the selected crypto assets
+* Apply Text-Sentiment analysis over the subreddit posts and merge with Price data
+* Apply LSTM over the multivariate dataset
+* Set an enzyme-fund over a COVAN testnet and fetch transaction costs
+* Calculate ROI & Risks of changes of strategy based on the algorithms decisions - MISSING
+* Set Bot transactions - MISSING
+* Set code on Amazon Lambda
 
--Scrap & clean Hour Price data through coingeko or gemini
--Scrap & clean, using PRAW, subreddits related to the selected crypto assets
--Apply Text-Sentiment analysis over the subreddit posts and merge with Price data
--Apply LSTM over the multivariate dataset
--Set an enzyme-fund over a COVAN testnet and fetch transaction costs
--Calculate ROI & Risks of changes of strategy based on the algorithms decisions - MISSING
--Set Bot transactions - MISSING
--Set code on Amazon Lambda
-
-
-
-
-
-[![Contributors][contributors-shield]][https://github.com/gonzaloetjo, https://github.com/Robson-55]
-[![Forks][forks-shield]][https://github.com/pAulseperformance/cryptopanic_API_Wrapper, https://github.com/pistocop/subreddit-comments-dl , https://github.com/avantgardefinance/enzyme-bot]
-[![Issues][issues-shield]][issues-url]
-[![LinkedIn][linkedin-shield]][https://www.linkedin.com/in/gonzaloetse/]
 
 
 
@@ -33,17 +23,6 @@ In this project, a Reddit scrapper will be used in order to get comments and sub
 
   <h3 align="center">Crypto-Bot</h3>
 
-  <p align="center">
-    Crypto bot:
-    <br />
-    <a href="https://github.com/Robson-55/Crypto_Trading_Bot/tree/main/Coingecko_Scrapper"><strong>Price Scrapper & Price data Cleaning »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/Robson-55/Crypto_Trading_Bot/tree/main/Reddit_Scrapper/subreddit-comments-dl">Reddit scrapper & Data preparation</a>
-    <a href="https://github.com/Robson-55/Crypto_Trading_Bot/tree/main/Reddit_Scrapper/transformers.py">LSTM over Text & Data merging</a>
-    <a href="https://github.com/Robson-55/Crypto_Trading_Bot/tree/main/Reddit_Scrapper/Enzyme-bot">Enzyme Bot</a>
-  </p>
-</p>
 
 
 
