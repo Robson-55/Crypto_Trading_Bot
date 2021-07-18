@@ -1,3 +1,5 @@
+#Importing Libraries
+
 import pandas as pd
 import keras
 import os
@@ -136,7 +138,7 @@ training_testing_target_shapes
 # training vs testing shapes (inputs)
 training_testing_input_shapes
 
-""" MODEL"""
+"""## MODEL"""
 
 import tensorflow as tf
 import tensorflow.keras as keras
@@ -171,25 +173,30 @@ def lstm_model():
 model=lstm_model()
 model.summary()
 
-#Model training during certain number of epochs:
-
-epochs=20
-model.fit(training_dataset,
+# This functions trains the model by fitting it to the training and test sets for a certain number of epochs
+def train_model(model,epochs=100):
+  history_model=model.fit(training_dataset,
                         training_target,
                         epochs=epochs,
                         validation_data=(testing_dataset,testing_target),
                         batch_size=1,
                         verbose=1)
+  return history_model
 
+epochs=20
+#Assigning the training of the model to a variable, which once called will initialize the training
+history_model=train_model(model,epochs)
+#Initializing the training:
+history_model
 
 #This function will plot both model training and validation lossed during training
-def model_metrics(model, epochs):
-  training_loss=model.history["loss"]
-  validation_loss=model.history["val_loss"]
+def model_metrics(history_model, epochs):
+  training_loss=history_model.history["loss"]
+  validation_loss=history_model.history["val_loss"]
 
   epochs=range(1,epochs+1)
   plt.plot(epochs,training_loss, color = 'b', label= 'Training loss')
   plt.plot(epochs,validation_loss, color = 'g', label= 'Validation loss')
   plt.legend()
 
-model_metrics(model, epochs)
+model_metrics(history_model, epochs)
