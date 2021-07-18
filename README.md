@@ -35,11 +35,8 @@ In this project, a Reddit scrapper will be used in order to get comments and sub
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://st3.depositphotos.com/8950810/17657/v/600/depositphotos_176577870-stock-illustration-cute-smiling-funny-robot-chat.jpg">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
-  <h3 align="center">Tennis-Predictor</h3>
+  <h3 align="center">Crypto-Bot</h3>
 
   <p align="center">
     Crypto bot:
@@ -126,35 +123,26 @@ We suggest to create a virtual environment for python and continue with the inst
 
 Once Installed all requirements, run the coingecko scrapper and reddit scrappers with the following comands.
 
- ```sh
+  Price Scrapper & Cleaner
+  ```sh
    python3 Coingecko_Scrapper/Price_Scrapper.py
+   ```
+  Reddit Scrapper & Cleaner
+  ```sh
    python python3 Reddit_Scrapper/subreddit-comments-dl/src/subreddit_downloader.py Ethereum --batch-size 50 --laps 800 --reddit-id <reddit_id> --reddit-secret <reddit_secret> --reddit-username <reddit_username> --utc-after 1589459201
    python3 Reddit_Scrapper/subreddit-comments-dl/src/dataset_builder.py 
    python3 Reddit_Scrapper/subreddit-comments-dl/dataset_formater.py
    ```
+  Merge & Cleaning
+  
+  ```sh
+   python3 Transformations.py 
+   ```
+  
 
 After both have run, run the following scripts to clean and merge the data separe:
 
-1. KNN
-   ```sh
-   python Python/Models/KNN.py
-   ```
-2. LogReg
-   ```sh
-   python Python/Models/LogReg.py
-   ```
-3. NN
-   ```sh
-   python Python/Models/NN.py
-   ```
-4. LSTM
-   ```sh
-   python Python/Models/LSTM.py
-   ```
-5. SVM
-   ```sh
-   python Python/Models/SVM.py
-   ```
+
 
 
 <!-- CONTRIBUTING -->
