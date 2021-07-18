@@ -198,3 +198,5 @@ def model_metrics(history_model, epochs):
   plt.plot(epochs,training_loss, color = 'b', label= 'Training loss')
   plt.plot(epochs,validation_loss, color = 'g', label= 'Validation loss')
   plt.legend()
+
+model_metrics(history_model, epochs)
