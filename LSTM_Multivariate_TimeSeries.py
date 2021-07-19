@@ -202,3 +202,17 @@ def model_metrics(history_model, epochs):
   plt.legend()
 
 model_metrics(history_model, epochs)
+
+#Comparing predictions vs target real values and storing that difference in "error" column
+
+predictions=model.predict(testing_dataset)
+#predictions.shape
+predictions=predictions[0]
+redictions=predictions[:25]
+#testing_target.shape
+errors=testing_target-predictions
+results=np.array([predictions, testing_target, errors])
+#print(results.shape)
+results=results.reshape(3,25)
+#print(results.shape)
+print(results)
