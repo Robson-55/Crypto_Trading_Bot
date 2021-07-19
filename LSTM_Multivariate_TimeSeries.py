@@ -8,19 +8,21 @@ import matplotlib.pyplot as plt
 
 """## DATA"""
 
-# input folder where the files lie in
+# Defining the input folder where the files lie in
 input_dir = os.getcwd()
 
-#Load dataset
+#Loading dataset
 def load_dataset(file,input_dir):
   f_name = os.path.join(input_dir, file)
   dataset = pd.read_csv(f_name)
   columns = ["Timestamp","prices","total_volumes"]
   d_ts = dataset[columns]
   return d_ts
+
 d_ts=load_dataset("out.csv",input_dir)
 d_ts.head()
 '''Data Exploration'''
+#Visualizing data metrics
 def data_exploration(dataframe):
     print("Some information about the data")
     print(dataframe.head())
